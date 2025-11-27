@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 4 - Testing</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(102, 51, 153, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(102, 51, 153, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .testing-card {
+            transition: all 0.3s ease;
+        }
+        .testing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .house-check {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .house-check:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(102, 51, 153, 0.1);
+            border-radius: 8px;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    overflow: hidden;
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative" style=" overflow: hidden;">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-purple-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 4 - Testing</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-16 py-6 flex flex-col">
+<!-- Phase description -->
+<div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg mb-4">
+<p class="text-xl text-gray-800">
+<span class="font-semibold text-purple-600">Testing</span> ensures website functionality, compatibility across browsers and devices, and performance optimization before public launch.
+                </p>
+</div>
+<!-- Analogy -->
+<div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded shadow-md mb-4">
+<div class="flex">
+<div class="flex-shrink-0">
+<i class="fas fa-home text-purple-500 text-xl"></i>
+</div>
+<div class="ml-4">
+<p class="text-lg text-gray-700 italic">
+                            &#34;The house is built, but before you move in, you check everything. Do the light switches work? Do the faucets leak? Do the doors close properly?&#34;
+                        </p>
+</div>
+</div>
+</div>
+<!-- Testing types -->
+<div class="grid grid-cols-3 gap-6 mb-4">
+<!-- Functionality Testing -->
+<div class="testing-card bg-white rounded-lg shadow-md p-4 house-check">
+<div class="flex items-center mb-3">
+<div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+<i class="fas fa-link text-purple-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Functionality Testing</h3>
+</div>
+<ul class="text-gray-700 ml-4 list-disc">
+<li>Check if every link works</li>
+<li>Verify forms submit correctly</li>
+<li>Test user can complete a purchase</li>
+</ul>
+</div>
+<!-- Compatibility Testing -->
+<div class="testing-card bg-white rounded-lg shadow-md p-4 house-check">
+<div class="flex items-center mb-3">
+<div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+<i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Compatibility Testing</h3>
+</div>
+<ul class="text-gray-700 ml-4 list-disc">
+<li>Check different browsers (Chrome, Firefox, Safari)</li>
+<li>Test on various devices (laptops, tablets, smartphones)</li>
+<li>Ensure consistent appearance and function</li>
+</ul>
+</div>
+<!-- Performance Testing -->
+<div class="testing-card bg-white rounded-lg shadow-md p-4 house-check">
+<div class="flex items-center mb-3">
+<div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+<i class="fas fa-tachometer-alt text-purple-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Performance Testing</h3>
+</div>
+<ul class="text-gray-700 ml-4 list-disc">
+<li>Check website loading speed</li>
+<li>Test ability to handle many users</li>
+<li>Identify and fix performance bottlenecks</li>
+</ul>
+</div>
+</div>
+<!-- Deliverables -->
+<div class="bg-gray-100 rounded-lg p-3 shadow-md">
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+<i class="fas fa-clipboard-check text-purple-600 text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800">Deliverables:</h3>
+<p class="text-gray-700">A bug report and a fully tested, bug-free version of the website ready for launch.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>13 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_12.html";
+    }
+    function goBack() {
+        window.location.href = "page_14.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

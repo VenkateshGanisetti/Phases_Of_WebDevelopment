@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Opportunities in Web Development</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .job-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .job-card-1 { border-left-color: #4CAF50; }
+        .job-card-2 { border-left-color: #FFA500; }
+        .job-card-3 { border-left-color: #008080; }
+        .job-card-4 { border-left-color: #663399; }
+        .job-card-5 { border-left-color: #e53e3e; }
+        .remote-work {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(0, 128, 128, 0.1) 100%);
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Career Opportunities in Web Development</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-12 py-6 flex flex-col">
+<!-- Introduction -->
+<div class="mb-6">
+<p class="text-xl text-gray-800">
+                    Web Development offers a large number of job opportunities, such as:
+                </p>
+</div>
+<!-- Job roles grid -->
+<div class="grid grid-cols-3 gap-5 mb-6">
+<!-- Web Developer -->
+<div class="job-card job-card-1 bg-white rounded-lg shadow-md p-5 flex items-start">
+<div class="mr-4 bg-green-100 p-3 rounded-full">
+<i class="fas fa-laptop-code text-green-600 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Web Developer</h3>
+<p class="text-gray-600">Builds websites and web applications.</p>
+</div>
+</div>
+<!-- UI/UX Designer -->
+<div class="job-card job-card-2 bg-white rounded-lg shadow-md p-5 flex items-start">
+<div class="mr-4 bg-orange-100 p-3 rounded-full">
+<i class="fas fa-paint-brush text-orange-500 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">UI/UX Designer</h3>
+<p class="text-gray-600">Designs how the website looks and feels.</p>
+</div>
+</div>
+<!-- Tester/QA Engineer -->
+<div class="job-card job-card-3 bg-white rounded-lg shadow-md p-5 flex items-start">
+<div class="mr-4 bg-teal-100 p-3 rounded-full">
+<i class="fas fa-vial text-teal-600 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Tester / QA Engineer</h3>
+<p class="text-gray-600">Checks whether the website works correctly.</p>
+</div>
+</div>
+<!-- Data Entry/Support Roles -->
+<div class="job-card job-card-4 bg-white rounded-lg shadow-md p-5 flex items-start">
+<div class="mr-4 bg-purple-100 p-3 rounded-full">
+<i class="fas fa-keyboard text-purple-600 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Data Entry / Support Roles</h3>
+<p class="text-gray-600">Basic computer knowledge helps in many office jobs.</p>
+</div>
+</div>
+<!-- Maintenance &amp; IT Support -->
+<div class="job-card job-card-5 bg-white rounded-lg shadow-md p-5 flex items-start">
+<div class="mr-4 bg-red-100 p-3 rounded-full">
+<i class="fas fa-cogs text-red-600 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Maintenance &amp; IT Support</h3>
+<p class="text-gray-600">Every company needs someone to manage their website.</p>
+</div>
+</div>
+</div>
+<!-- Remote Work Opportunities -->
+<div class="remote-work rounded-lg p-5 shadow-md mt-2">
+<h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+<i class="fas fa-globe text-green-600 mr-3"></i>
+                    Jobs Available Anywhere
+                </h3>
+<p class="text-gray-700 mb-2">
+                    Even if there are no tech companies nearby, you can work:
+                </p>
+<div class="flex items-center justify-around mt-3">
+<div class="flex flex-col items-center">
+<div class="bg-white p-3 rounded-full mb-2 shadow">
+<i class="fas fa-home text-teal-600 text-2xl"></i>
+</div>
+<p class="font-medium text-gray-700">From Home</p>
+<p class="text-sm text-gray-500">(Remote Work)</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="bg-white p-3 rounded-full mb-2 shadow">
+<i class="fas fa-user-tie text-purple-600 text-2xl"></i>
+</div>
+<p class="font-medium text-gray-700">Freelance</p>
+<p class="text-sm text-gray-500">(Clients Worldwide)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>5 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_4.html";
+    }
+    function goBack() {
+        window.location.href = "page_6.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

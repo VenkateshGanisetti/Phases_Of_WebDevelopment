@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 1 - Planning and Requirement Analysis</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .house-blueprint {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #8B4513;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: perspective(500px) rotateX(45deg);
+            transform-style: preserve-3d;
+        }
+        .blueprint-line {
+            position: absolute;
+            background-color: #8B4513;
+        }
+        .vertical-line {
+            width: 2px;
+            height: 100px;
+            right: 50px;
+            top: 0;
+        }
+        .horizontal-line {
+            width: 100px;
+            height: 2px;
+            left: 0;
+            top: 50px;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 1 - Planning and Requirement Analysis</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-16 py-6 flex">
+<!-- Left side content -->
+<div class="w-2/3 pr-8">
+<!-- Phase description -->
+<div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg mb-6">
+<h2 class="text-2xl font-semibold text-green-600 mb-3">The &#34;What and Why&#34; Phase</h2>
+<p class="text-lg text-gray-800">
+                        This is the foundation. Before you do anything, you need to know what you are building and why. It&#39;s about gathering all the necessary information.
+                    </p>
+</div>
+<!-- Key aspects -->
+<div class="grid grid-cols-2 gap-4">
+<div class="feature-card bg-white bg-opacity-80 rounded-lg p-4 shadow">
+<div class="flex items-center mb-2">
+<i class="fas fa-users text-orange-500 text-2xl mr-3"></i>
+<h3 class="text-xl font-medium text-gray-800">Target Audience</h3>
+</div>
+<p class="text-gray-700">
+                            Who is the website for? (e.g., Students, shoppers, professionals)
+                        </p>
+</div>
+<div class="feature-card bg-white bg-opacity-80 rounded-lg p-4 shadow">
+<div class="flex items-center mb-2">
+<i class="fas fa-bullseye text-teal-500 text-2xl mr-3"></i>
+<h3 class="text-xl font-medium text-gray-800">Website Purpose</h3>
+</div>
+<p class="text-gray-700">
+                            What is the website&#39;s purpose? (e.g., To sell products, to provide information, a blog)
+                        </p>
+</div>
+<div class="feature-card bg-white bg-opacity-80 rounded-lg p-4 shadow">
+<div class="flex items-center mb-2">
+<i class="fas fa-list-check text-purple-600 text-2xl mr-3"></i>
+<h3 class="text-xl font-medium text-gray-800">Required Features</h3>
+</div>
+<p class="text-gray-700">
+                            What features are required? (e.g., A login system, a shopping cart, a contact form)
+                        </p>
+</div>
+<div class="feature-card bg-white bg-opacity-80 rounded-lg p-4 shadow">
+<div class="flex items-center mb-2">
+<i class="fas fa-file-lines text-blue-500 text-2xl mr-3"></i>
+<h3 class="text-xl font-medium text-gray-800">Deliverables</h3>
+</div>
+<p class="text-gray-700">
+                            A detailed project document, a sitemap, and a project timeline
+                        </p>
+</div>
+</div>
+</div>
+<!-- Right side analogy -->
+<div class="w-1/3">
+<div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg h-full flex flex-col justify-between">
+<div>
+<h2 class="text-2xl font-semibold text-teal-600 mb-4">The House Analogy</h2>
+<p class="text-gray-700 mb-4">
+                            Imagine you&#39;re building a house. You don&#39;t just start digging. You sit with an architect and discuss:
+                        </p>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span>Who is the house for?</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span>What features are needed?</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span>What&#39;s the budget and timeline?</span>
+</li>
+</ul>
+</div>
+<!-- House blueprint visualization -->
+<div class="flex justify-center mt-4">
+<div class="house-blueprint">
+<div class="blueprint-line vertical-line"></div>
+<div class="blueprint-line horizontal-line"></div>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<i class="fas fa-drafting-compass text-4xl text-orange-500 opacity-50"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>7 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_6.html";
+    }
+    function goBack() {
+        window.location.href = "page_8.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

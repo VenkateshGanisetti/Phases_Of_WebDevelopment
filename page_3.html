@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Understanding Networks and Internet</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+
+<style>
+    body, html {width: 100vw; min-height: 100vh; margin: 0; padding: 0;}
+
+    .slide { width: 100vw; min-height: 100vh; position: relative; }
+
+    .network-grid {
+        position: absolute; width: 100%; height: 100%;
+        background-image: 
+            linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+    }
+
+    /* Floating Navigation Arrows */
+    .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 55px;
+        cursor: pointer;
+        color: #007bff;
+        opacity: 0.8;
+        transition: 0.2s ease;
+        z-index: 50;
+    }
+    .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+    .left-arrow { left: 25px; }
+    .right-arrow { right: 25px; }
+
+    .connection-line {
+        stroke: #4CAF50;
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+        animation: dash 15s linear infinite;
+    }
+
+    @keyframes dash { to { stroke-dashoffset: -1000; } }
+
+    .network-node { fill: #fff; stroke: #4CAF50; stroke-width: 2; }
+
+    .node-label { font-size: 12px; text-anchor: middle; fill: #333; }
+</style>
+</head>
+
+<body>
+
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+
+<!-- Background grid -->
+<div class="network-grid"></div>
+
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Understanding Networks and Internet</h1>
+</div>
+
+<!-- Main content -->
+<div class="z-10 w-full px-16 py-6 flex flex-col">
+
+<div class="flex mb-6">
+
+<!-- Network Section -->
+<div class="w-1/2 pr-4">
+    <div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg h-full">
+        <div class="flex items-center mb-3">
+            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3">
+                <i class="fas fa-network-wired text-white text-xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-green-600">What is a Network?</h2>
+        </div>
+
+        <p class="text-lg text-gray-800 mb-3"><span class="font-semibold">A network means "connection."</span></p>
+
+        <p class="text-lg text-gray-800 mb-3">
+            When two or more devices (mobiles/computers) are connected so they can share information, that is called a network.
+        </p>
+
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-3 rounded mt-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-lightbulb text-orange-500"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-md text-gray-700 italic">
+                        "If two houses in a village are connected by a road, people can travel between them. Similarly, if two computers are connected, they can share information."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Internet Section -->
+<div class="w-1/2 pl-4">
+    <div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg h-full">
+        <div class="flex items-center mb-3">
+            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center mr-3">
+                <i class="fas fa-globe text-white text-xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-purple-600">What is the Internet?</h2>
+        </div>
+
+        <p class="text-lg text-gray-800 mb-3">
+            <span class="font-semibold">The Internet is like a giant network</span> that connects computers and mobiles all over the world.
+        </p>
+
+        <div class="bg-teal-50 border-l-4 border-teal-500 p-3 rounded mt-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-lightbulb text-teal-500"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-md text-gray-700 italic">
+                        "Imagine many villages connected by roads. Because of those roads, people can travel and share things. The Internet is also like a network of roads — but instead of connecting villages, it connects computers and mobiles around the world."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Visual Representation -->
+<div class="flex justify-center items-center mt-2">
+    <div class="w-full h-44 bg-white bg-opacity-60 rounded-lg shadow-lg p-4" id="network-visualization"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Keyboard Navigation -->
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_2.html";
+    }
+    function goBack() {
+        window.location.href = "page_4.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+<!-- D3 GRAPH -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const width = document.getElementById('network-visualization').clientWidth - 40;
+    const height = document.getElementById('network-visualization').clientHeight - 20;
+    
+    const svg = d3.select('#network-visualization')
+        .append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    const nodes = [
+        { id: "device1", name: "Computer", x: width * 0.15, y: height * 0.5 },
+        { id: "device2", name: "Laptop", x: width * 0.35, y: height * 0.3 },
+        { id: "device3", name: "Mobile", x: width * 0.35, y: height * 0.7 },
+        { id: "device4", name: "Server", x: width * 0.65, y: height * 0.5 },
+        { id: "device5", name: "Cloud", x: width * 0.85, y: height * 0.5 }
+    ];
+
+    const links = [
+        { source: "device1", target: "device2" },
+        { source: "device1", target: "device3" },
+        { source: "device2", target: "device4" },
+        { source: "device3", target: "device4" },
+        { source: "device4", target: "device5" },
+        { source: "device1", target: "device5" }
+    ];
+
+    svg.selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .attr('x1', d => nodes.find(n => n.id === d.source).x)
+        .attr('y1', d => nodes.find(n => n.id === d.source).y)
+        .attr('x2', d => nodes.find(n => n.id === d.target).x)
+        .attr('y2', d => nodes.find(n => n.id === d.target).y)
+        .attr('class', 'connection-line');
+
+    const nodeGroups = svg.selectAll('g')
+        .data(nodes)
+        .enter()
+        .append('g')
+        .attr('transform', d => `translate(${d.x}, ${d.y})`);
+
+    nodeGroups.append('circle')
+        .attr('r', 20)
+        .attr('class', 'network-node');
+
+    nodeGroups.append('text')
+        .attr('class', 'node-label')
+        .attr('dy', 35)
+        .text(d => d.name);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 3 - Development (Coding)</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .code-block {
+            font-family: monospace;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .code-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .development-arrow {
+            position: absolute;
+            width: 180px;
+            height: 3px;
+            background-color: #4CAF50;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .development-arrow::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -8px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid #4CAF50;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 3 - Development (Coding)</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-16 py-6 flex flex-col items-center">
+<!-- Phase description -->
+<div class="bg-white bg-opacity-80 rounded-lg p-5 shadow-lg mb-6 w-full">
+<p class="text-xl text-gray-800">
+<span class="font-semibold text-green-600">Development</span> is where the magic happens! Developers take the design mockups and turn them into a functional, interactive website using code.
+                </p>
+</div>
+<!-- Analogy -->
+<div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded shadow-md mb-6 w-full">
+<div class="flex">
+<div class="flex-shrink-0">
+<i class="fas fa-home text-teal-500 text-xl"></i>
+</div>
+<div class="ml-4">
+<p class="text-lg text-gray-700 italic">
+                            &#34;The construction crew arrives. They pour the foundation, erect the walls, install the plumbing and electrical systems. They are turning the blueprints into a real, physical structure.&#34;
+                        </p>
+</div>
+</div>
+</div>
+<!-- Development sections -->
+<div class="flex w-full justify-between mb-4 relative">
+<!-- Front-end development -->
+<div class="w-5/12 bg-white rounded-lg shadow-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-laptop-code text-2xl text-blue-500 mr-3"></i>
+<h3 class="text-2xl font-semibold text-blue-500">Front-End Development</h3>
+</div>
+<p class="text-gray-700 mb-3">Builds what the user sees and interacts with in their browser.</p>
+<div class="grid grid-cols-3 gap-2 mb-3">
+<div class="code-block bg-blue-100 p-2 text-center">
+<i class="fab fa-html5 text-xl text-orange-500 mb-1"></i>
+<p class="text-sm font-medium">HTML</p>
+<p class="text-xs text-gray-600">Structure</p>
+</div>
+<div class="code-block bg-blue-100 p-2 text-center">
+<i class="fab fa-css3-alt text-xl text-blue-500 mb-1"></i>
+<p class="text-sm font-medium">CSS</p>
+<p class="text-xs text-gray-600">Style</p>
+</div>
+<div class="code-block bg-blue-100 p-2 text-center">
+<i class="fab fa-js text-xl text-yellow-500 mb-1"></i>
+<p class="text-sm font-medium">JavaScript</p>
+<p class="text-xs text-gray-600">Interactivity</p>
+</div>
+</div>
+</div>
+<!-- Development arrow -->
+<div class="w-1/12 flex items-center justify-center relative">
+<div class="development-arrow"></div>
+</div>
+<!-- Back-end development -->
+<div class="w-5/12 bg-white rounded-lg shadow-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-server text-2xl text-purple-600 mr-3"></i>
+<h3 class="text-2xl font-semibold text-purple-600">Back-End Development</h3>
+</div>
+<p class="text-gray-700 mb-3">Builds the &#34;server-side&#34; part of the website.</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="code-block bg-purple-100 p-2 rounded">
+<i class="fas fa-database text-xl text-red-500 mb-1"></i>
+<p class="text-sm font-medium">Databases</p>
+<p class="text-xs text-gray-600">User profiles, products</p>
+</div>
+<div class="code-block bg-purple-100 p-2 rounded">
+<i class="fas fa-cogs text-xl text-teal-600 mb-1"></i>
+<p class="text-sm font-medium">Server Logic</p>
+<p class="text-xs text-gray-600">Processing payments, logging in</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Deliverables -->
+<div class="bg-gray-100 rounded-lg p-4 shadow-md w-full">
+<div class="flex items-center">
+<i class="fas fa-clipboard-check text-xl text-green-600 mr-3"></i>
+<h3 class="text-xl font-semibold text-gray-700">Deliverables:</h3>
+</div>
+<p class="text-gray-700 ml-8">
+                    A functional website that runs on a local development machine or a test server.
+                </p>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>11 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_10.html";
+    }
+    function goBack() {
+        window.location.href = "page_12.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

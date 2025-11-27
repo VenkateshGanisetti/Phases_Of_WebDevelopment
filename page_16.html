@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 5 - Deployment Skills and Tools</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-card.hosting {
+            border-left-color: #4CAF50;
+        }
+        .tool-card.cloud {
+            border-left-color: #FFA500;
+        }
+        .tool-card.cicd {
+            border-left-color: #663399;
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 5 - Deployment Skills and Tools</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-10 py-6 flex flex-col">
+<!-- Introduction -->
+<div class="bg-white bg-opacity-80 rounded-lg p-4 shadow-lg mb-6">
+<p class="text-lg text-gray-800">
+                    Deployment is the phase where your website moves from development to a live server, making it accessible to users via the internet.
+                </p>
+</div>
+<!-- Tools Grid -->
+<div class="grid grid-cols-3 gap-6 mb-4">
+<!-- Hosting Tools -->
+<div class="bg-white rounded-lg shadow-lg p-5 tool-card hosting">
+<div class="flex items-center mb-3">
+<i class="fas fa-server text-green-600 text-2xl mr-3"></i>
+<h3 class="text-xl font-semibold text-green-600">Hosting</h3>
+</div>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span><strong>Netlify or Vercel:</strong> Easiest for beginners</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span><strong>Heroku:</strong> Platform as a service</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+<span><strong>GoDaddy:</strong> Domain registration</span>
+</li>
+</ul>
+<div class="mt-3 pt-3 border-t border-gray-200">
+<p class="text-sm text-gray-600"><i class="fas fa-lightbulb text-yellow-500 mr-1"></i> Skills: Domain management, DNS configuration</p>
+</div>
+</div>
+<!-- Cloud Services -->
+<div class="bg-white rounded-lg shadow-lg p-5 tool-card cloud">
+<div class="flex items-center mb-3">
+<i class="fas fa-cloud text-orange-500 text-2xl mr-3"></i>
+<h3 class="text-xl font-semibold text-orange-500">Cloud Services</h3>
+</div>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+<span><strong>AWS:</strong> Amazon Web Services</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+<span><strong>Google Cloud:</strong> Scalable infrastructure</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+<span><strong>Microsoft Azure:</strong> Cloud computing platform</span>
+</li>
+</ul>
+<div class="mt-3 pt-3 border-t border-gray-200">
+<p class="text-sm text-gray-600"><i class="fas fa-lightbulb text-yellow-500 mr-1"></i> Skills: Scalability, file storage</p>
+</div>
+</div>
+<!-- CI/CD -->
+<div class="bg-white rounded-lg shadow-lg p-5 tool-card cicd">
+<div class="flex items-center mb-3">
+<i class="fas fa-sync-alt text-purple-600 text-2xl mr-3"></i>
+<h3 class="text-xl font-semibold text-purple-600">CI/CD</h3>
+</div>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+<span><strong>GitHub Actions:</strong> Workflow automation</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+<span><strong>Jenkins:</strong> Open-source automation server</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+<span><strong>Docker:</strong> Containerization platform</span>
+</li>
+</ul>
+<div class="mt-3 pt-3 border-t border-gray-200">
+<p class="text-sm text-gray-600"><i class="fas fa-lightbulb text-yellow-500 mr-1"></i> Skills: Continuous Integration/Deployment</p>
+</div>
+</div>
+</div>
+<!-- Key Points -->
+<div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded shadow-md mt-2">
+<div class="flex">
+<div class="flex-shrink-0">
+<i class="fas fa-info-circle text-teal-500 text-xl"></i>
+</div>
+<div class="ml-4">
+<p class="text-lg text-gray-700">
+                            Deployment skills are essential for making your website live and accessible to users worldwide.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>16 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_15.html";
+    }
+    function goBack() {
+        window.location.href = "page_17.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

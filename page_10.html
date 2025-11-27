@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 2 - Design Skills and Tools</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .ui-card {
+            border-left-color: #4CAF50;
+        }
+        .ux-card {
+            border-left-color: #FFA500;
+        }
+        .assets-card {
+            border-left-color: #008080;
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 2 - Design Skills and Tools</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-12 py-6 flex flex-col">
+<!-- Introduction -->
+<div class="bg-white bg-opacity-80 rounded-lg p-4 shadow-lg mb-6">
+<p class="text-lg text-gray-800">
+                    Design is about creating the visual elements and user experience of a website. Here are the key skills and tools:
+                </p>
+</div>
+<!-- Skills and Tools Grid -->
+<div class="grid grid-cols-3 gap-6">
+<!-- UI Design -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="bg-green-500 text-white p-3 flex items-center">
+<i class="fas fa-palette text-2xl mr-3"></i>
+<h2 class="text-xl font-semibold">UI Design</h2>
+</div>
+<div class="p-4">
+<div class="mb-3">
+<h3 class="font-semibold text-gray-700 mb-1">Skills Required:</h3>
+<ul class="list-disc pl-5 text-gray-600">
+<li>Color theory</li>
+<li>Typography</li>
+<li>Layout principles</li>
+<li>Visual hierarchy</li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-gray-700 mb-1">Tools:</h3>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-green-100">
+<i class="fab fa-figma text-green-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">Figma</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-green-100">
+<i class="fas fa-object-group text-green-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">Adobe XD</span>
+</div>
+<div class="flex items-center">
+<div class="tool-icon bg-green-100">
+<i class="fas fa-pencil-alt text-green-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">Sketch</span>
+</div>
+</div>
+</div>
+</div>
+<!-- UX Design -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="bg-orange-500 text-white p-3 flex items-center">
+<i class="fas fa-user-check text-2xl mr-3"></i>
+<h2 class="text-xl font-semibold">UX Design</h2>
+</div>
+<div class="p-4">
+<div class="mb-3">
+<h3 class="font-semibold text-gray-700 mb-1">Skills Required:</h3>
+<ul class="list-disc pl-5 text-gray-600">
+<li>User research</li>
+<li>Wireframing</li>
+<li>Prototyping</li>
+<li>Usability testing</li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-gray-700 mb-1">Tools:</h3>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-orange-100">
+<i class="fas fa-bezier-curve text-orange-500 text-2xl"></i>
+</div>
+<span class="text-gray-700">Balsamiq</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-orange-100">
+<i class="fas fa-vr-cardboard text-orange-500 text-2xl"></i>
+</div>
+<span class="text-gray-700">InVision</span>
+</div>
+<div class="flex items-center">
+<div class="tool-icon bg-orange-100">
+<i class="fas fa-mobile-alt text-orange-500 text-2xl"></i>
+</div>
+<span class="text-gray-700">Marvel App</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Assets -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="bg-teal-500 text-white p-3 flex items-center">
+<i class="fas fa-vector-square text-2xl mr-3"></i>
+<h2 class="text-xl font-semibold">Assets</h2>
+</div>
+<div class="p-4">
+<div class="mb-3">
+<h3 class="font-semibold text-gray-700 mb-1">Skills Required:</h3>
+<ul class="list-disc pl-5 text-gray-600">
+<li>Image editing</li>
+<li>Vector graphics</li>
+<li>Icon design</li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-gray-700 mb-1">Tools:</h3>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-teal-100">
+<i class="fas fa-bezier-curve text-teal-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">Adobe Illustrator</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="tool-icon bg-teal-100">
+<i class="fas fa-paint-brush text-teal-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">Canva</span>
+</div>
+<div class="flex items-center">
+<div class="tool-icon bg-teal-100">
+<i class="fas fa-code text-teal-600 text-2xl"></i>
+</div>
+<span class="text-gray-700">SVG editors</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Analogy -->
+<div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded shadow-md mt-5">
+<div class="flex">
+<div class="flex-shrink-0">
+<i class="fas fa-lightbulb text-purple-500 text-xl"></i>
+</div>
+<div class="ml-3">
+<p class="text-gray-700 italic">
+                            &#34;UI Design is like decorating a house, while UX Design is like planning how people will move through it.&#34;
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>10 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_9.html";
+    }
+    function goBack() {
+        window.location.href = "page_11.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>

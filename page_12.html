@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phase 3 - Development Skills and Tools</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body, html {width: 100vw; min-height: 100vh; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            
+        }
+        .network-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+        .skill-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        .skill-card html {
+            border-left-color: #663399;
+        }
+        .skill-card css {
+            border-left-color: #4CAF50;
+        }
+        .skill-card js {
+            border-left-color: #FFA500;
+        }
+        .skill-card frameworks {
+            border-left-color: #008080;
+        }
+        .skill-card vcs {
+            border-left-color: #e05d44;
+        }
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .page-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    
+        /* Floating Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 55px;
+            cursor: pointer;
+            color: #007bff;
+            opacity: 0.8;
+            transition: 0.2s ease;
+            z-index: 50;
+        }
+        .nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+        .left-arrow { left: 25px; }
+        .right-arrow { right: 25px; }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center relative">
+<!-- Network grid background -->
+<div class="network-grid"></div>
+<!-- Floating Navigation Buttons -->
+<i class="fas fa-arrow-circle-left nav-arrow left-arrow" onclick="goNext()"></i>
+<i class="fas fa-arrow-circle-right nav-arrow right-arrow" onclick="goBack()"></i>
+<!-- Header -->
+<div class="w-full bg-green-600 py-4 px-10 z-10">
+<h1 class="text-4xl font-bold text-white">Phase 3 - Development Skills and Tools</h1>
+</div>
+<!-- Main content -->
+<div class="z-10 w-full px-12 py-6 flex flex-col">
+<!-- Introduction -->
+<p class="text-xl text-gray-800 mb-4">
+                Development requires specific skills and tools to transform design into a functional website.
+            </p>
+<!-- Skills and Tools Grid -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Core Languages -->
+<div class="skill-card html bg-white rounded-lg shadow-lg p-4">
+<div class="flex items-center mb-3">
+<div class="tool-icon bg-purple-100">
+<i class="fas fa-code text-3xl text-purple-600"></i>
+</div>
+<h2 class="text-2xl font-semibold text-purple-800">Core Languages</h2>
+</div>
+<ul class="ml-4 space-y-2">
+<li class="flex items-center">
+<i class="fab fa-html5 text-orange-500 text-xl mr-2"></i>
+<span><strong>HTML5:</strong> Structure</span>
+</li>
+<li class="flex items-center">
+<i class="fab fa-css3-alt text-blue-500 text-xl mr-2"></i>
+<span><strong>CSS3:</strong> Styling</span>
+</li>
+<li class="flex items-center">
+<i class="fab fa-js text-yellow-500 text-xl mr-2"></i>
+<span><strong>JavaScript:</strong> Logic</span>
+</li>
+</ul>
+</div>
+<!-- Tools -->
+<div class="skill-card frameworks bg-white rounded-lg shadow-lg p-4">
+<div class="flex items-center mb-3">
+<div class="tool-icon bg-green-100">
+<i class="fas fa-tools text-3xl text-green-600"></i>
+</div>
+<h2 class="text-2xl font-semibold text-green-800">Development Tools</h2>
+</div>
+<ul class="ml-4 space-y-2">
+<li class="flex items-center">
+<i class="fas fa-terminal text-gray-700 text-xl mr-2"></i>
+<span><strong>VS Code:</strong> Best for beginners</span>
+</li>
+<li class="flex items-center">
+<i class="fas fa-pencil-ruler text-gray-700 text-xl mr-2"></i>
+<span><strong>Sublime Text:</strong> Lightweight editor</span>
+</li>
+</ul>
+</div>
+<!-- Frameworks -->
+<div class="skill-card js bg-white rounded-lg shadow-lg p-4">
+<div class="flex items-center mb-3">
+<div class="tool-icon bg-teal-100">
+<i class="fas fa-cubes text-3xl text-teal-600"></i>
+</div>
+<h2 class="text-2xl font-semibold text-teal-800">Frameworks</h2>
+</div>
+<ul class="ml-4 space-y-2">
+<li class="flex items-center">
+<i class="fab fa-react text-blue-400 text-xl mr-2"></i>
+<span><strong>React.js:</strong> Component-based UI</span>
+</li>
+<li class="flex items-center">
+<i class="fab fa-vuejs text-green-500 text-xl mr-2"></i>
+<span><strong>Vue.js:</strong> Progressive framework</span>
+</li>
+<li class="flex items-center">
+<i class="fab fa-angular text-red-500 text-xl mr-2"></i>
+<span><strong>Angular:</strong> TypeScript-based</span>
+</li>
+</ul>
+</div>
+<!-- Version Control -->
+<div class="skill-card vcs bg-white rounded-lg shadow-lg p-4">
+<div class="flex items-center mb-3">
+<div class="tool-icon bg-orange-100">
+<i class="fas fa-code-branch text-3xl text-orange-600"></i>
+</div>
+<h2 class="text-2xl font-semibold text-orange-800">Version Control</h2>
+</div>
+<ul class="ml-4 space-y-2">
+<li class="flex items-center">
+<i class="fab fa-git-alt text-gray-800 text-xl mr-2"></i>
+<span><strong>Git:</strong> Tracking changes</span>
+</li>
+<li class="flex items-center">
+<i class="fab fa-github text-gray-900 text-xl mr-2"></i>
+<span><strong>GitHub/GitLab:</strong> Code hosting</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Footer with page number -->
+<div class="absolute bottom-4 right-6 text-gray-600" style="visibility: hidden;">
+<p>12 / 18</p>
+</div>
+</div>
+
+<script>
+    // Navigation functions
+    function goNext() {
+        window.location.href = "page_11.html";
+    }
+    function goBack() {
+        window.location.href = "page_13.html";
+    }
+
+    // Keyboard navigation: Left key = next, Right key = previous
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "ArrowLeft") { goNext(); }
+        if (event.key === "ArrowRight") { goBack(); }
+    });
+</script>
+
+</body></html>
